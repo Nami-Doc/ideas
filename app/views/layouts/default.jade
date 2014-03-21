@@ -1,0 +1,12 @@
+-@ var body: String
+-@ var title: String = "Page"
+-@ var assets: ReverseAssets
+
+!!!5
+html
+    head
+        title= title
+        link{:rel => "stylesheet", :href => {assets.at("stylesheets/app.css")}}
+    body
+        h1 Hey
+        != body
