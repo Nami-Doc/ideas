@@ -5,7 +5,8 @@ version := "1.0-SNAPSHOT"
 libraryDependencies ++= Seq(
   jdbc,
   anorm,
-  cache
+  cache,
+  "mysql" % "mysql-connector-java" % "5.1.21"
 )
 
 resolvers += "FuseSource Public Repository" at "http://repo.fusesource.com/nexus/content/repositories/public"
