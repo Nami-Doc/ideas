@@ -6,10 +6,10 @@
 GET     /                           controllers.Application.index
 
 # Tasks
-GET     /tasks                  controllers.Ideas.index
-POST    /tasks                  controllers.Ideas.create
+GET     /ideas                  controllers.Ideas.index
+POST    /ideas                  controllers.Ideas.create
 # @TODO should this be "DELETE /tasks/:id" ?
-POST    /tasks/:id/delete       controllers.Ideas.delete(id: Long)
+POST    /ideas/:id/delete       controllers.Ideas.remove(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
