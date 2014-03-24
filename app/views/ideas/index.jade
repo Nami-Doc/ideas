@@ -3,3 +3,7 @@
 ul
 - for (idea <- ideas)
     li= idea.name
+    // @todo DELETE
+
+- form(routes.Ideas.create)
+    input(type="submit" value="Create")

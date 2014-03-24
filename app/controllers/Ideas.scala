@@ -7,10 +7,14 @@ import models._
 
 object Ideas extends Controller {
   def index = Action { implicit request =>
-    Ok(Render.withStds("ideas/index.jade", 'ideas -> Idea.all))
+    Ok(Render.withStds("ideas/index.jade",
+      'ideas -> Idea.all
+    ))
   }
 
   def create = TODO
 
-  def remove(id: Long) = TODO
+  def remove(id: Long) = Action { implicit request =>
+    Redirect(routes.Ideas.index())
+  }
 }
