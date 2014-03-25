@@ -1,9 +1,9 @@
 -@ var ideas: List[Idea]
+-@ var form: Form[String]
 
 ul
 - for (idea <- ideas)
     li= idea.name
     // @todo DELETE
 
-- form(routes.Ideas.create)
-    input(type="submit" value="Create")
+!= form("a") { inputText(form("label")); "a" }
