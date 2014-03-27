@@ -1,9 +1,0 @@
--@ var ideas: List[Idea]
--@ var form: Form[String]
-
-ul
-- for (idea <- ideas)
-    li= idea.name
-    // @todo DELETE
-
-!= form("a") { inputText(form("label")); "a" }

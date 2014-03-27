@@ -1,0 +1,17 @@
+@(ideas: List[Idea], ideaForm: Form[String])
+@import helper._
+
+@layouts.default("Ideas List") {
+    <ul>
+        @ideas.map { idea =>
+            <li>@idea.name</li>
+            // todo DELETE
+        }
+    </ul>
+
+    @form(routes.Ideas.create) {
+        @inputText(ideaForm("Idea"))
+
+        <input type="submit" value="Create">
+    }
+}

@@ -1,27 +1,23 @@
 package controllers
 
 import play.api._
-import controllers.tools.Render
 import play.api.mvc._
 import models._
 import play.api.data._
 import play.api.data.Forms._
 
 object Ideas extends Controller {
-  def index = Action { implicit request =>
+  def index = Action {
     val form = Form(
       "title" -> nonEmptyText
     )
 
-    Ok(Render.withStds("ideas/index.jade",
-      'ideas -> Idea.all,
-      'form -> form
-    ))
+    Ok(views.html.ideas.index(ideas = Idea.all, ideaForm = form))
   }
 
   def create = TODO
 
-  def remove(id: Long) = Action { implicit request =>
+  def remove(id: Long) = Action {
     Redirect(routes.Ideas.index())
   }
 }
